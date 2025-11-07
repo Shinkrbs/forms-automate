@@ -4,9 +4,9 @@ GEMINI_MODEL = "models/gemini-2.5-flash"
 
 # Prompts for the AI to generate answers
 PROMPTS = [
-    "Imagine you are a student leader in visayas state university, provide a simple response (1-2 sentences) to the question: What is the biggest challenge you face with the current manual / paper-based election process?",
+    "Imagine you are a student leader in visayas state university, provide a simple response (1 sentence) to the question: What is the biggest challenge you face with the current manual / paper-based election process?",
     "Imagine you are a student leader in visayas state university, provide a simple response (1) to the question: Are there any missing features that should included? If yes, please describe the feature(s). The features was Election Creation, Voter List Management, Candidate Registration, Partylist Management, Position Templates, Position Requirements, Voter Authentication, Code Distribution, Secure Voting, Preventing Double Votes, Automatic Tallying, Live Results Display, Election Status Page, and Official Reports. If you think the features are good indicate None do not overcomplicate the features you suggest just make it simple",
-    "Imagine you are a student leader in visayas state university, provide a simple response (1-Next sentences) to this question: What is you biggest concern about switching to this new online election system? Make the response human-like and don't use deep words make it seem like a random student just answerd the question"
+    "Imagine you are a student leader in visayas state university, provide a simple response (1 sentence) to this question: What is you biggest concern about switching to this new online election system? Make the response human-like and don't use deep words make it seem like a random student just answerd the question"
 ]
 
 # Desired ratings for the features 
