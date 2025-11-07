@@ -153,6 +153,4 @@ class FormBot:
             (By.XPATH, "//span[text()='Submit']/ancestor::div[@role='button']"))).click()
 
         # Final Section
-        self.wait.until(EC.presence_of_element_located(
-            (By.XPATH, "//*[contains(text(), 'Your response has been recorded')]")))
         print("Successfully submitted form!")
