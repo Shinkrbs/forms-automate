@@ -3,38 +3,43 @@ from config import FORM_URL, PROMPTS, RATINGS, GEMINI_MODEL
 from utils import setup_driver, setup_gemini
 from bot import FormBot
 
-def main():
-    """
-    Main function to initialize and run the form-filling bot.
-    """
-    driver = None  # Initialize driver to None for the 'finally' block
-    try:
-        print("Setting up Gemini AI...")
-        model = setup_gemini(GEMINI_MODEL)
-        
-        print("Setting up Web Driver...")
-        driver, wait = setup_driver(FORM_URL)
-        
-        # Initialize the bot with all its dependencies
-        bot = FormBot(driver, wait, model, PROMPTS, RATINGS)
-        
-        # Run the main automation process
-        print("Bot is starting...")
-        bot.run()
 
-    except Exception as e:
-        print(f"A critical error occurred in main: {e}")
-        if driver:
-             # Save a screenshot on error for debugging
-            driver.save_screenshot("error_screenshot.png")
-            print("Saved 'error_screenshot.png' for debugging.")
-    finally:
-        if driver:
-            print("Process finished. Closing driver in 5 seconds...")
-            time.sleep(5)
-            driver.quit()
-        else:
-            print("Driver failed to initialize.")
+def run_bot_once(run_number, model):
+
+    driver = None
+    print(f"\n--- [Run {run_number}] Starting ---")
+    print(f"[Run {run_number}] Setting up Web Driver...")
+    driver, wait = setup_driver(FORM_URL)
+
+    bot = FormBot(driver, wait, model, PROMPTS, RATINGS)
+
+    print(f"[Run {run_number}] Bot is running...")
+    bot.run()
+
+    if driver:
+        print(
+            f"[Run {run_number}] Process finished. Closing driver immediately.")
+        driver.quit()
+    else:
+        print(f"[Run {run_number}] Driver failed to initialize.")
+
+    print(f"--- [Run {run_number}] Complete ---")
+
+
+def main():
+
+    num_runs = 2
+    model = setup_gemini(GEMINI_MODEL)
+
+    for i in range(num_runs):
+        run_bot_once(i + 1, model)
+
+        if i < num_runs - 1:
+            print(f"Pausing for 2 seconds before next run...")
+            time.sleep(2)
+
+    print("\nAll bot runs are complete.")
+
 
 if __name__ == "__main__":
     main()
