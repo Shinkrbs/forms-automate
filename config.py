@@ -4,18 +4,18 @@ GEMINI_MODEL = "models/gemini-2.5-flash"
 
 # Prompts for the AI to generate answers
 PROMPTS = [
-    "Imagine you are a student leader in visayas state university, provide a simple response (1 sentence) to the question: What is the biggest challenge you face with the current manual / paper-based election process?",
-    "Imagine you are a student leader in visayas state university, provide a simple response (1) to the question: Are there any missing features that should included? If yes, please describe the feature(s). The features was Election Creation, Voter List Management, Candidate Registration, Partylist Management, Position Templates, Position Requirements, Voter Authentication, Code Distribution, Secure Voting, Preventing Double Votes, Automatic Tallying, Live Results Display, Election Status Page, and Official Reports. If you think the features are good indicate None do not overcomplicate the features you suggest just make it simple",
-    "Imagine you are a student leader in visayas state university, provide a simple response (1 sentence) to this question: What is you biggest concern about switching to this new online election system? Make the response human-like and don't use deep words make it seem like a random student just answerd the question"
+    "Imagine you are a student voter in visayas state university, provide a simple response (4-8 words) to the question: What is the biggest challenge you face with the current manual / paper-based election process? Make the answer casual and human-like more like conversation type of answer not formal",
+    "Imagine you are a student leader in visayas state university, provide a simple response (1 - 2 words) to the question: Are there any missing features that should included? If yes, please describe the feature(s). The features was Election Creation, Voter List Management, Candidate Registration, Partylist Management, Position Templates, Position Requirements, Voter Authentication, Code Distribution, Secure Voting, Preventing Double Votes, Automatic Tallying, Live Results Display, Election Status Page, and Official Reports. If you think the features are good indicate None do not overcomplicate the features you suggest just make it simple",
+    "Imagine you are a student voter in visayas state university, provide a simple response (1 sentence) to this question: What is you biggest concern about switching to this new online election system? Make the response human-like and don't use deep words make it seem like a random student just answerd the question"
 ]
 
 # Desired ratings for the features 
 RATINGS = {
-    "Election Creation": "5 (Essential)",
+    "Election Creation": "4",
     "Voter List Management": "5 (Essential)",
     "Candidate Registration": "5 (Essential)",
     "Partylist Management": "5 (Essential)",
-    "Position Templates": "5 (Essential)",
+    "Position Templates": "4",
     "Position Requirements": "5 (Essential)",
     "Voter Authentication": "5 (Essential)",
     "Code Distribution": "5 (Essential)",
@@ -23,6 +23,6 @@ RATINGS = {
     "Preventing Double Votes": "5 (Essential)",
     "Automatic Tallying": "5 (Essential)",
     "Live Results Display": "5 (Essential)",
-    "Election Status Page": "5 (Essential)",
-    "Official Reports": "5 (Essential)"
+    "Election Status Page": "4",
+    "Official Reports": "4"
 }
