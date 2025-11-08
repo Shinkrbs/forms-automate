@@ -28,15 +28,15 @@ def run_bot_once(run_number, model):
 
 def main():
 
-    num_runs = 2
+    num_runs = 13
     model = setup_gemini(GEMINI_MODEL)
 
     for i in range(num_runs):
         run_bot_once(i + 1, model)
 
         if i < num_runs - 1:
-            print(f"Pausing for 2 seconds before next run...")
-            time.sleep(2)
+            print(f"Pausing for 1 second before next run...")
+            time.sleep(1)
 
     print("\nAll bot runs are complete.")
 
