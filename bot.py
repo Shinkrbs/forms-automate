@@ -14,13 +14,6 @@ class FormBot:
         self.response = ""
 
     def run(self):
-        """
-        Runs the entire form-filling process, page by page,
-        using the original time.sleep() logic.
-        """
-
-        # --- [USER'S ORIGINAL CODE START] ---
-        # This is your procedural logic, adapted to fit inside this class.
 
         # First Section
         print("Page 1: Consenting...")
@@ -148,9 +141,8 @@ class FormBot:
             (By.XPATH, "//div[@role='checkbox' and contains(@aria-label, 'Customer Support')]"))).click()
         time.sleep(1)
 
+        # Final Section
         print("Submitting the form...")
         self.wait.until(EC.element_to_be_clickable(
             (By.XPATH, "//span[text()='Submit']/ancestor::div[@role='button']"))).click()
-
-        # Final Section
         print("Successfully submitted form!")
